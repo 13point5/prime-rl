@@ -114,10 +114,11 @@ async def orchestrate(config: OrchestratorConfig):
     tokenizer = AutoTokenizer.from_pretrained(config.model.name, trust_remote_code=config.model.trust_remote_code)
 
     # Setup monitor
-    logger.info(f"Initializing monitor (wandb={config.wandb}, prime_monitor={config.prime_monitor})")
+    logger.info(f"Initializing monitor (wandb={config.wandb}, prime_monitor={config.prime_monitor}, metrics_backend={config.metrics_backend})")
     monitor = setup_monitor(
         wandb_config=config.wandb,
         prime_config=config.prime_monitor,
+        metrics_backend_config=config.metrics_backend,
         output_dir=config.output_dir,
         tokenizer=tokenizer,
         run_config=config,

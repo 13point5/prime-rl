@@ -1,0 +1,112 @@
+.runs-list {
+  width: 100%;
+}
+
+.runs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.runs-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.refresh-button,
+.retry-button {
+  background-color: #374151;
+  color: #e0e0e0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.refresh-button:hover,
+.retry-button:hover {
+  background-color: #4b5563;
+}
+
+.runs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.run-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.run-card:hover {
+  border-color: #a78bfa;
+  box-shadow: 0 4px 6px -1px rgba(167, 139, 250, 0.1);
+}
+
+.run-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.run-card-header h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+}
+
+.run-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.detail-row .label {
+  color: #9ca3af;
+}
+
+.detail-row .value {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.loading,
+.error,
+.empty {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.125rem;
+  color: #9ca3af;
+}
+
+.error {
+  color: #ef4444;
+}

@@ -14,6 +14,7 @@ from prime_rl.trainer.config import (
 )
 from prime_rl.transport.config import FileSystemTransportConfig, TransportConfigType
 from prime_rl.utils.config import HeartbeatConfig, LogConfig, WandbConfig
+from prime_rl.utils.monitor.metrics_backend import MetricsBackendConfig
 from prime_rl.utils.pydantic_config import BaseConfig, BaseSettings
 
 
@@ -151,6 +152,9 @@ class RLTrainerConfig(BaseSettings):
 
     # The wandb configuration
     wandb: WandbConfig | None = None
+
+    # The metrics backend configuration
+    metrics_backend: MetricsBackendConfig | None = None
 
     output_dir: Annotated[
         Path,

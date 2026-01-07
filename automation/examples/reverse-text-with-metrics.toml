@@ -1,0 +1,35 @@
+# Example Configuration for Reverse Text Training with Metrics Tracking
+# This config demonstrates how to enable metrics tracking with the custom backend
+
+max_steps = 100
+seq_len = 2048
+
+[ckpt]
+
+[model]
+name = "PrimeIntellect/Qwen3-0.6B-Reverse-Text-SFT"
+
+[trainer.optim]
+lr = 3e-6
+
+[orchestrator]
+batch_size = 128
+rollouts_per_example = 16
+
+[orchestrator.sampling]
+max_tokens = 128
+
+[[orchestrator.env]]
+id = "reverse-text"
+
+# Enable Metrics Backend Logging
+[metrics_backend]
+backend_url = "http://localhost:8080"  # Update to your backend URL
+timeout = 30
+log_samples = false  # Set to true to log sample rollouts
+log_distributions = true  # Set to true to log reward distributions
+
+# You can also enable W&B logging simultaneously
+# [wandb]
+# project = "prime-rl"
+# name = "reverse-text-metrics-test"

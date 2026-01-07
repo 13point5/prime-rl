@@ -1,0 +1,13 @@
+.metrics-chart {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.metrics-chart h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #e0e0e0;
+}

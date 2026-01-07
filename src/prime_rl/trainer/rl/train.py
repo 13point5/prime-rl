@@ -75,8 +75,13 @@ def train(config: RLTrainerConfig):
         logger.warning(f"Running in benchmark mode (max_steps={config.max_steps})")
 
     # Setup the monitor
-    logger.info(f"Initializing monitor ({config.wandb})")
-    monitor = setup_monitor(config.wandb, output_dir=config.output_dir, run_config=config)
+    logger.info(f"Initializing monitor (wandb={config.wandb}, metrics_backend={config.metrics_backend})")
+    monitor = setup_monitor(
+        wandb_config=config.wandb,
+        metrics_backend_config=config.metrics_backend,
+        output_dir=config.output_dir,
+        run_config=config,
+    )
 
     # Setup heartbeat (only on rank 0)
     heart = None

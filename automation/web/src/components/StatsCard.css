@@ -1,0 +1,49 @@
+.stats-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+}
+
+.stats-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.stats-card-header h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.trend-indicator {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.trend-up {
+  color: #10b981;
+}
+
+.trend-down {
+  color: #ef4444;
+}
+
+.trend-flat {
+  color: #6b7280;
+}
+
+.stats-card-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-bottom: 0.25rem;
+}
+
+.stats-card-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+}

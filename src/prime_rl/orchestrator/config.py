@@ -12,6 +12,7 @@ from prime_rl.utils.config import (
     PrimeMonitorConfig,
     WandbWithExtrasConfig,
 )
+from prime_rl.utils.monitor.metrics_backend import MetricsBackendConfig
 from prime_rl.utils.pydantic_config import BaseConfig, BaseSettings
 
 
@@ -588,6 +589,9 @@ class OrchestratorConfig(BaseSettings):
 
     # The prime monitor configuration
     prime_monitor: PrimeMonitorConfig | None = None
+
+    # The metrics backend configuration
+    metrics_backend: MetricsBackendConfig | None = None
 
     # The checkpoint configuration
     ckpt: CheckpointConfig | None = None

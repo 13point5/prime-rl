@@ -7,12 +7,15 @@ from prime_rl.utils.monitor.base import Monitor, NoOpMonitor
 from prime_rl.utils.monitor.multi import MultiMonitor
 from prime_rl.utils.monitor.prime import PrimeMonitor
 from prime_rl.utils.monitor.wandb import WandbMonitor
+from prime_rl.utils.monitor.metrics_backend import MetricsBackendMonitor, MetricsBackendConfig
 from prime_rl.utils.pydantic_config import BaseSettings
 
 __all__ = [
     "Monitor",
     "WandbMonitor",
     "PrimeMonitor",
+    "MetricsBackendMonitor",
+    "MetricsBackendConfig",
     "MultiMonitor",
     "NoOpMonitor",
     "setup_monitor",
@@ -37,6 +40,7 @@ def setup_monitor(
     run_config: BaseSettings | None = None,
     *,
     prime_config: PrimeMonitorConfig | None = None,
+    metrics_backend_config: MetricsBackendConfig | None = None,
     # Backward compatibility: support old 'config' keyword argument
     config: WandbWithExtrasConfig | None = None,
 ) -> Monitor:
@@ -66,6 +70,16 @@ def setup_monitor(
         monitors.append(
             PrimeMonitor(
                 config=prime_config,
+                output_dir=output_dir,
+                tokenizer=tokenizer,
+                run_config=run_config,
+            )
+        )
+
+    if metrics_backend_config is not None:
+        monitors.append(
+            MetricsBackendMonitor(
+                config=metrics_backend_config,
                 output_dir=output_dir,
                 tokenizer=tokenizer,
                 run_config=run_config,

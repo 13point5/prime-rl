@@ -1,0 +1,16 @@
+# Example GPU Configuration for Prime Intellect
+
+# GPU type (e.g., H100, A100, RTX4090, RTX5090)
+gpu_type: "H100"
+
+# Number of GPUs
+gpu_count: 2
+
+# Region/data center
+region: "us-east"
+
+# Base image (should have CUDA pre-installed)
+image: "ubuntu-22.04-cuda-12.1"
+
+# Disk size in GB
+disk_size_gb: 200
